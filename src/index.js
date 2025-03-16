@@ -64,7 +64,7 @@ deleteButton.addEventListener("click", () => {
 
 
 //append the delete button to the list item
-newTaskListed.appendChild(deleteButton);
+newTaskListed.appendChild(deleteButton); 
 
 
 //create edit button
@@ -74,11 +74,12 @@ editButton.innerText = "edit";
 
 //add event listener to the edit button
 editButton.addEventListener("click", () => {
-  newTaskListed.innerText = prompt("Edit your task", userText);
+  const newText = prompt("Edit your task", userText);
   if (newText !== null && newText !== "") {
     newTaskListed.innerText = `${newText.trim()} - Due: ${userDate || "No Due Date"}`;
   }
   });
+  
 
 
   //append the edit button to the list item
