@@ -26,8 +26,8 @@ console.log("Form submitted");
 
   //create a new list item
   const newTaskListed = document.createElement("li");
-  newTaskListed.innerText = `${userText.trim} - Due: ${userDueDate.trim || "No Due Date"}`;
-  console.log("Task List Inner HTML", unorderedTaskListTaskListed.innerHTML);
+  newTaskListed.innerText = `${userText.trim()} - Due: ${userDate.trim() || "No Due Date"}`;
+  console.log("Task List Inner HTML", newTaskListed.innerHTML);
 
 
   //set color 
@@ -57,10 +57,9 @@ console.log("New task listed", newTaskListed.innerText);
 const deleteButton = document.createElement("button");
 deleteButton.innerText = "delete";
 
-
 //add event listener to the delete button
 deleteButton.addEventListener("click", () => {
-  newTaskListed.removeChild(newTaskListed);
+  unorderedTaskList.removeChild(newTaskListed);
 });
 
 
@@ -76,8 +75,8 @@ editButton.innerText = "edit";
 //add event listener to the edit button
 editButton.addEventListener("click", () => {
   newTaskListed.innerText = prompt("Edit your task", userText);
-  if(newText !== null && newtext !== ""){
-    newTaskListed.firstChild.textContent = `&{newText} - Due: ${userDueDate || "No Due Date"}`;
+  if (newText !== null && newText !== "") {
+    newTaskListed.innerText = `${newText.trim()} - Due: ${userDate || "No Due Date"}`;
   }
   });
 
