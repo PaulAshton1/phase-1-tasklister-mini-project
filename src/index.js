@@ -13,13 +13,13 @@ const taskDueDate = document.getElementById("due-date");
 //adding event listener to form
 taskform.addEventListener("submit", (event) => {
   event.preventDefault(); //prevents form from refreshing the page 
-console.log("Form submitted");
+console.log("Form submitted");//debugging
   
 
 //save a user input as a variable
   const userText =newTaskInput.value;
   if(userText === "")
-    return;
+    return;  //returns what the user entered in the textbox
   const userpriority = taskpriority.value;
   const userDate = taskDueDate.value; 
 
@@ -59,7 +59,7 @@ deleteButton.innerText = "delete";
 
 //add event listener to the delete button
 deleteButton.addEventListener("click", () => {
-  unorderedTaskList.removeChild(newTaskListed);
+  unorderedTaskList.removeChild(newTaskListed); //removes the list item from the unordered list
 });
 
 
