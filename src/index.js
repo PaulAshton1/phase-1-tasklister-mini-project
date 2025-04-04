@@ -26,7 +26,7 @@ console.log("Form submitted");//debugging
 
   //create a new list item
   const newTaskListed = document.createElement("li");
-  newTaskListed.innerText = `${userText.trim()} - Due: ${userDate.trim() || "No Due Date"}`;
+  newTaskListed.textContent = `${userText.trim()} - Due: ${userDate.trim() || "No Due Date"}`;
   console.log("Task List Inner HTML", newTaskListed.innerHTML);
 
 
@@ -50,12 +50,12 @@ switch(userpriority){
 //appeal to the new list item to unorder list
 unorderedTaskList.appendChild(newTaskListed);
 console.log("UL element found", unorderedTaskList);
-console.log("New task listed", newTaskListed.innerText);
+console.log("New task listed", newTaskListed.textContent);
 
 
 //create a delete button
 const deleteButton = document.createElement("button");
-deleteButton.innerText = "delete";
+deleteButton.textContent = "delete";
 
 //add event listener to the delete button
 deleteButton.addEventListener("click", () => {
@@ -69,14 +69,14 @@ newTaskListed.appendChild(deleteButton);
 
 //create edit button
 const editButton = document.createElement("button");
-editButton.innerText = "edit";
+editButton.textContent = "edit";
 
 
 //add event listener to the edit button
 editButton.addEventListener("click", () => {
   const newText = prompt("Edit your task", userText);
   if (newText !== null && newText !== "") {
-    newTaskListed.innerText = `${newText.trim()} - Due: ${userDate || "No Due Date"}`;
+    newTaskListed.textContent = `${newText.trim()} - Due: ${userDate || "No Due Date"}`;
   }
   });
 
