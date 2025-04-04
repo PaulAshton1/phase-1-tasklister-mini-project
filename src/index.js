@@ -79,9 +79,9 @@ editButton.addEventListener("click", () => {
     newTaskListed.innerText = `${newText.trim()} - Due: ${userDate || "No Due Date"}`;
   }
   });
+
+
   
-
-
   //append the edit button to the list item
   newTaskListed.appendChild(editButton);
    taskform.reset();
